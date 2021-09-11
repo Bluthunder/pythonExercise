@@ -4,7 +4,7 @@ def check_anagram(str1, str2):
 
     if len(sorted1) == len(sorted2):
         if sorted1 == sorted2:
-            print(str1+" and "+str2+ " are anagram")
+            print(str1+" and "+str2 + " are anagram")
         else:
             print(str1 + " and " + str2 + " aren't anagram")
     else:
