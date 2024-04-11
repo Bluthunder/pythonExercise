@@ -1,5 +1,5 @@
 """
-Date: 10 April 20234
+Date: 10 April 2024
 Leet Code Grind 75 Question: 3
 DSA Topic: Hash Map
 
@@ -42,7 +42,7 @@ def is_ransom_note_opt(ransom_note: str, magazine: str) -> bool:
         if ch not in magazine_dict or magazine_dict[ch] == 0:
             return False
         else:
-            magazine_dict[c] -= 1
+            magazine_dict[ch] -= 1
 
     return True
 
