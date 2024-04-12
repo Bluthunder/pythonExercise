@@ -9,10 +9,6 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 typically using all the original letters exactly once.
 """
 
-
-
-
-
 from collections import Counter
 
 
@@ -62,9 +58,11 @@ def anagram(s: str, t: str) -> bool:
 
 
 if __name__ == '__main__':
-    string1 = 'rat'
-    string2 = 'car'
+    string1 = 'anagram'
+    string2 = 'nagaram'
 
     print(anagram(string1, string2))
 
-    # print(f'Anagram Counter ---> {anagram_counter_method(string1, string2)}')
+    print(f'Anagram Counter ---> {anagram_counter_method(string1, string2)}')
+
+    print(f'Anagram Sorted ---> {anagram_sorted_method(string1, string2)}')
