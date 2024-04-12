@@ -17,10 +17,10 @@ def isPalindrome(string: str) -> bool:
 
     while left < right:
 
-        while not isAlphaNum(string[left]):
+        while left < right and not isAlphaNum(string[left]):
             left += 1
 
-        while not isAlphaNum(string[right]):
+        while right > left and not isAlphaNum(string[right]):
             right -= 1
 
         if string[left].lower() != string[right].lower():
@@ -52,6 +52,8 @@ def is_palindrome_inbuilt(string: str) -> bool:
 if __name__ == '__main__':
     input_string = "A man, a plan, a canal: Panama"
 
-    print(f'This function uses implementations from scratch to check palindrome, {isPalindrome(input_string)}')
+    invalid_string = ".,"
 
-    print(f'This function uses in built python methods, {is_palindrome_inbuilt(input_string)}')
+    print(f'This function uses implementations from scratch to check palindrome, {isPalindrome(invalid_string)}')
+
+    # print(f'This function uses in built python methods, {is_palindrome_inbuilt(invalid_string)}')
