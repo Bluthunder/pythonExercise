@@ -13,6 +13,10 @@ In a linked list implementation below following method has been implemented
 4. Insert at Position: insert_at_pos - For inserting value at given index
 5. Pop First: pop_first - Remove from the beginning of the list
 6. Pop: pop - Remove from the end of the list
+7. Remove: remove - Remove a node at a given index
+8. Get: get - Get a node at a given index
+9. Set Value: set-value - Insert a value at a given index
+10. Delete Linked List: delete - Delete entire linked list
 
 """
 
@@ -120,20 +124,69 @@ class LinkedList:
         self.length -= 1
         return pop_node
 
+    def remove(self, index):
+        if index < 0 or index > self.length:
+            print(f'Index outside list')
+            return None
+
+        if index == 0:
+            return self.pop_first()
+        elif index == -1 or index == self.length - 1:
+            return self.pop()
+        else:
+            prev_node = self.get(index - 1)
+            pop_node = prev_node.next
+            prev_node.next = pop_node.next
+            pop_node.next = None
+            self.length -= 1
+            return pop_node
+
+    def get(self, index):
+        current_node = self.head
+        if index < 0 or index > self.length:
+            return None
+
+        for _ in range(index):
+            current_node = current_node.next
+        return current_node
+
+    def set_value(self, index, value):
+        temp_node = self.get(index)
+        if temp_node:
+            temp_node.value = value
+            return True
+        return False
+
+    def search(self, target):
+        current_node = self.head
+        index = 0
+        while current_node.value:
+            if current_node.value == target:
+                return index
+            current_node = current_node.next
+            index += 1
+        return -1
+
+    def delete(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
 
 if __name__ == '__main__':
     linkedlist = LinkedList()
     linkedlist.append(30)
-    # linkedlist.append(10)
-    # linkedlist.prepend(50)
-    # linkedlist.insert_at_pos(40, 1)
-    # linkedlist.insert_at_pos(41, 2)
-    # linkedlist.insert_at_pos(42, 3)
-    # linkedlist.insert_at_pos(43, 1)
-    #
-    # linkedlist.traversal()
-    print(f'Linked List : {linkedlist}')
+    linkedlist.append(10)
+    linkedlist.prepend(50)
+    linkedlist.insert_at_pos(40, 1)
+    linkedlist.insert_at_pos(41, 2)
+    linkedlist.insert_at_pos(42, 3)
+    linkedlist.insert_at_pos(43, 1)
+
+    print(f'Linked List Before : {linkedlist}')
 
     linkedlist.pop()
+    linkedlist.pop_first()
+    linkedlist.remove(3)
 
-    print(f'Linked List : {linkedlist}')
+    print(f'Linked List After : {linkedlist}')
