@@ -1,6 +1,6 @@
 """
 Creation Date: 17 April 2024
-DSA Topic: Linked List
+DSA Topic: Linked List - Single Linked List
 
 This is based on exercises from book Data Structure and Algorithm: Thinking with Python
 
@@ -14,9 +14,10 @@ In a linked list implementation below following method has been implemented
 5. Pop First: pop_first - Remove from the beginning of the list
 6. Pop: pop - Remove from the end of the list
 7. Remove: remove - Remove a node at a given index
-8. Get: get - Get a node at a given index
+8. Get: get - Get the value of node at a given index
 9. Set Value: set-value - Insert a value at a given index
 10. Delete Linked List: delete - Delete entire linked list
+11. Search: search - Search for value in linked list
 
 """
 
@@ -28,6 +29,9 @@ class Node:
     def __init__(self, value):
         self.value = value
         self.next = None
+
+    def __str__(self):
+        return str(self.value)
 
 
 class LinkedList:
@@ -190,3 +194,5 @@ if __name__ == '__main__':
     linkedlist.remove(3)
 
     print(f'Linked List After : {linkedlist}')
+
+    print(linkedlist.get(2))
