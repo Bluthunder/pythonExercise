@@ -106,6 +106,14 @@ class Circular_Linked_List:
 
         return first_half, second_half
 
+    def is_sorted(self):
+        temp = self.head
+        while temp.next is not self.head:
+            if temp.value > temp.next.value:
+                return False
+            temp = temp.next
+        return True
+
 
 #
 
@@ -122,6 +130,7 @@ if __name__ == '__main__':
 
     print(csl)
 
-    first, second = csl.split_list_two_ptr()
-    print(first)
-    print(second)
+    # first, second = csl.split_list_two_ptr()
+    # print(first)
+    # print(second)
+    print(csl.is_sorted())
