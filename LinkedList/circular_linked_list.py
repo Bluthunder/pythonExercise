@@ -194,9 +194,12 @@ if __name__ == '__main__':
     cs_linked_list.append(20)
     cs_linked_list.append(30)
     cs_linked_list.prepend(5)
+    cs_linked_list.append(40)
+    cs_linked_list.append(50)
+    cs_linked_list.append(60)
 
-    cs_linked_list.insert_at_pos(15, 2)
-    cs_linked_list.insert_at_pos(25, 0)
+    # cs_linked_list.insert_at_pos(15, 2)
+    # cs_linked_list.insert_at_pos(25, 0)
 
     print(cs_linked_list)
 
@@ -206,12 +209,12 @@ if __name__ == '__main__':
 
     # print(cs_linked_list.search(10))
 
-    cs_linked_list.set(0, 0)
-
-    cs_linked_list.set(15, 2)
-
-    print(f' Value after update {cs_linked_list}')
-
-    print(cs_linked_list.remove(2))
+    # cs_linked_list.set(0, 0)
     #
-    print(f' List after pop {cs_linked_list}')
+    # cs_linked_list.set(15, 2)
+
+    # print(f' Value after update {cs_linked_list}')
+    #
+    # print(cs_linked_list.remove(2))
+    # #
+    # print(f' List after pop {cs_linked_list}')
