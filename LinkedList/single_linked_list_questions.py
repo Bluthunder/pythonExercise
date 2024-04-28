@@ -1,3 +1,22 @@
+def merge_two_list(self, l1, l2):
+    dummy = Node(-1)
+    prev = dummy
+
+    while l1 and l2:
+        if l1.value <= l2.value:
+            prev.next = l1
+            l1 = l1.next
+        else:
+            prev.value = l2
+            l2 = l2.nex
+
+        prev = prev.next
+
+    prev.next = l1 if l1 is not None else l2
+
+    return prev.next
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -74,15 +93,26 @@ class LinkedList:
 
 
 if __name__ == '__main__':
-    linked_list = LinkedList()
+    linked_list1 = LinkedList()
 
-    linked_list.append(10)
-    linked_list.append(20)
-    linked_list.append(30)
-    linked_list.append(40)
-    linked_list.append(50)
+    linked_list1.append(10)
+    linked_list1.append(20)
+    linked_list1.append(30)
+    linked_list1.append(40)
+    linked_list1.append(50)
 
-    print(linked_list)
+    linked_list2 = LinkedList()
+    linked_list2.append(5)
+    linked_list2.append(10)
+    linked_list2.append(15)
+    linked_list2.append(25)
+    linked_list2.append(35)
+    linked_list2.append(45)
+    linked_list2.append(55)
 
-    print(linked_list.get_node_from_end_efficient(2))
-   # print(linked_list.get_node_from_end(2))
+    print(linked_list1)
+
+    # print(linked_list.get_node_from_end_efficient(2))
+    # print(linked_list.get_node_from_end(2))
+
+    print(merge_two_list(linked_list1, linked_list2))
