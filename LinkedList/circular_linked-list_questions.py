@@ -106,6 +106,39 @@ class Circular_Linked_List:
 
         return first_half, second_half
 
+    def delete_node(self, key):
+        if self.head.value == key:
+            cur = self.head
+            while cur.next != self.head:
+                cur = cur.next
+            if self.head == self.head.next:
+                self.head = None
+            else:
+                cur.next = self.head.next
+                self.head = cur.next
+        else:
+            cur = self.head
+            prev = None
+            while cur.next != self.head:
+                prev = cur
+                cur = cur.next
+                if cur.value == key:
+                    prev.next = cur.next
+                    cur = cur.next
+
+    def josephus_circle(self, step):
+        temp = self.head
+        while self.node_count() > 1:
+            step_count = 1
+            while step_count is not step:
+                temp = temp.next
+                step_count += 1
+
+            print(f'Removed --- {temp.value}')
+            self.delete_node(temp.value)
+            temp = temp.next
+        return f" Last person standing is : {temp.value}"
+
     def is_sorted(self):
         temp = self.head
         while temp.next is not self.head:
@@ -133,4 +166,4 @@ if __name__ == '__main__':
     # first, second = csl.split_list_two_ptr()
     # print(first)
     # print(second)
-    print(csl.is_sorted())
+    print(csl.josephus_circle(3))
