@@ -91,6 +91,16 @@ class LinkedList:
 
         return nth_ptr
 
+    def middle_node(self):
+        slow_ptr = self.head
+        fast_ptr = self.head
+
+        while fast_ptr and fast_ptr.next:
+            slow_ptr = slow_ptr.next
+            fast_ptr = fast_ptr.next.next
+
+        return slow_ptr
+
 
 if __name__ == '__main__':
     linked_list1 = LinkedList()
@@ -108,11 +118,14 @@ if __name__ == '__main__':
     linked_list2.append(25)
     linked_list2.append(35)
     linked_list2.append(45)
-    linked_list2.append(55)
+    # linked_list2.append(55)
 
     print(linked_list1)
 
     # print(linked_list.get_node_from_end_efficient(2))
     # print(linked_list.get_node_from_end(2))
 
-    print(merge_two_list(linked_list1, linked_list2))
+    # print(merge_two_list(linked_list1, linked_list2))
+
+    print(linked_list1.middle_node())
+    print(linked_list2.middle_node())
