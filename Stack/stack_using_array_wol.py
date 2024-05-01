@@ -1,5 +1,5 @@
 """
-Stack Implementation using fixed length array
+Stack Implementation using array with limit
 Date - 01.05.2023
 
 Stack has below operations
@@ -15,9 +15,8 @@ Stack has below operations
 
 class stack(object):
 
-    def __init__(self, limit=10):
+    def __init__(self):
         self.stk = []
-        self.limit = limit
 
     def __str__(self):
         values = self.stk.reverse()
@@ -30,28 +29,21 @@ class stack(object):
         else:
             return False
 
-    def is_full(self):
-        if len(self.stk) == self.limit:
-            return True
-        else:
-            return False
-
     def push(self, value):
-        if self.is_full():
-            return "The Stack is full !!!"
-        else:
-            self.stk.append(value)
-            return "The Element is inserted successfully"
+        self.stk.append(value)
+        return "The Element has been inserted successfully"
 
     def pop(self):
         if self.is_empty():
-            return "Stack is Empty !!!"
+            print(f'Stack Underflow')
+            return 0
         else:
             return self.stk.pop()
 
     def peek(self):
         if self.is_empty():
-            return "Stack is Empty !!"
+            print(f'Stack Underflow')
+            return 0
         else:
             return self.stk[len(self.stk) - 1]
 
