@@ -139,6 +139,17 @@ class Circular_Linked_List:
             temp = temp.next
         return f" Last person standing is : {temp.value}"
 
+    def floyd_cycle_detection(self):
+        slow_ptr = fast_ptr = self.head
+
+        while slow_ptr is not None and fast_ptr is not None and fast_ptr.next is not None:
+            slow_ptr = slow_ptr.next
+            fast_ptr = fast_ptr.next.next
+
+            if slow_ptr == fast_ptr:
+                return True
+        return False
+
     def is_sorted(self):
         temp = self.head
         while temp.next is not self.head:
