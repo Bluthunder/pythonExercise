@@ -30,7 +30,7 @@ def valid_parenthesis(s: str) -> bool:
 
 
 if __name__ == '__main__':
-    s = "()[]{}"
+    s = "(A+B)+(C+D)"
     print(valid_parenthesis(s))
 
 
