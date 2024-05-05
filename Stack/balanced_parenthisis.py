@@ -1,6 +1,6 @@
 """
 
-Date: 05.05.2023
+Date: 05.05.2024
 Check if the parenthesis is balanced
 DSA - Stack
 
