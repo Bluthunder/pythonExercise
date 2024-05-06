@@ -19,9 +19,15 @@ class stack(object):
         self.stk = []
 
     def __str__(self):
-        values = self.stk.reverse()
-        values = [str(x) for x in self.stk]
+        values = [str(x) for x in reversed(self.stk)]
         return f'\n'.join(values)
+
+    # def __iter__(self):
+    #     for _ in range(len(self.stk)):
+    #         return self.stk
+
+    def get_length(self):
+        return len(self.stk)
 
     def is_empty(self):
         if not self.stk:
@@ -70,3 +76,5 @@ if __name__ == '__main__':
     # print(f'After {Stack}')
 
     print(Stack.peek())
+
+    print(f'Len--> {Stack.get_length()}')

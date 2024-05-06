@@ -20,8 +20,7 @@ class stack(object):
         self.limit = limit
 
     def __str__(self):
-        values = self.stk.reverse()
-        values = [str(x) for x in self.stk]
+        values = [str(x) for x in reversed(self.stk)]
         return f'\n'.join(values)
 
     def is_empty(self):
