@@ -22,12 +22,13 @@ class SmartStacK():
         self.stack.append(x)
         if not self.min or x <= self.min[-1]:
             self.min.append(x)
-        else:
-            self.min.append(self.min[-1])
+        # else:
+        #     self.min.append(self.min[-1])
 
     def stackPop(self):
         x = self.stack.pop()
-        self.min.pop()
+        if x == self.min.pop():
+            self.min.pop()
         return x
 
     def stackMin(self):

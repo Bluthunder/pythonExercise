@@ -9,6 +9,9 @@ removing all non-alphanumeric characters, it reads the same forward and backward
 Alphanumeric characters include letters and numbers.
 
 Given a string s, return true if it is a palindrome, or false otherwise.
+
+
+isAlphanum function is used to ignore space.
 """
 
 
@@ -17,6 +20,7 @@ def isPalindrome(string: str) -> bool:
 
     while left < right:
 
+        # check if left has not crossed right and ignore special char
         while left < right and not isAlphaNum(string[left]):
             left += 1
 
@@ -54,6 +58,6 @@ if __name__ == '__main__':
 
     invalid_string = ".,"
 
-    print(f'This function uses implementations from scratch to check palindrome, {isPalindrome(invalid_string)}')
+    print(f'This function uses implementations from scratch to check palindrome, {isPalindrome(input_string)}')
 
     # print(f'This function uses in built python methods, {is_palindrome_inbuilt(invalid_string)}')
