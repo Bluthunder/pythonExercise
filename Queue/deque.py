@@ -37,4 +37,5 @@ class Q:
 
     queue.popleft()
     print(queue.count(2))
+    # print(queue.index(4))
 
