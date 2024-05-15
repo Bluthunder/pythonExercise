@@ -4,6 +4,8 @@ DSA - Stacks
 
 Design a stack such that getminimum should be O(1)
 
+This uses an auxillary stack
+
 """
 
 
