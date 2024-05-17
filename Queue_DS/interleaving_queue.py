@@ -46,6 +46,7 @@ def interleaveQ(q):
         q.enqueue(Stk.pop())
         q.enqueue(q.dequeue())
 
+
 def interleave_BF(q):
     m = Q.size() // 2
 
@@ -83,6 +84,3 @@ if __name__ == '__main__':
     # print(f' Interleaved Q - {Q}')
 
     interleave_BF(Q)
-
-
-
