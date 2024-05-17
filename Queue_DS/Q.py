@@ -7,7 +7,7 @@ This is ADT implementation of queue using python list (arrays) without any size 
 """
 
 
-class Queue:
+class Que:
 
     def __init__(self):
         self.items = []
@@ -30,7 +30,7 @@ class Queue:
         if self.is_empty():
             return " No element in Q"
         else:
-            self.items.pop(0)
+            return self.items.pop(0)
 
     def peek(self):
         if self.is_empty():
@@ -41,15 +41,18 @@ class Queue:
     def delete(self):
         self.items = None
 
+    def size(self):
+        return len(self.items)
+
 
 if __name__ == '__main__':
-    customeQ = Queue()
+    customeQ = Que()
     print(customeQ.is_empty())
     customeQ.enqueue(3)
     customeQ.enqueue(2)
     customeQ.enqueue(5)
     customeQ.enqueue(6)
     print(customeQ)
-    customeQ.dequeue()
+    print(f'Dequeue -- {customeQ.dequeue()}')
     print(customeQ)
     print(customeQ.peek())

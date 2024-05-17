@@ -1,9 +1,9 @@
 """
 Date - 12.05.2024
 
-DSA - Queue
+DSA - Queue_DS
 
-This is Queue implementation using python collections class - deque
+This is Queue_DS implementation using python collections class - deque
 Deque object supports below methods
 
 1. append(x) : Add x to right side

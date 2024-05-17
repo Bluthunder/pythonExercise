@@ -1,9 +1,9 @@
 """
 Date - 10.05.2024
-DSA - Queue
+DSA - Queue_DS
 
 Below is the circular queue implementation based on array with fixed size
-Circular Queue ADT has below operations
+Circular Queue_DS ADT has below operations
 
 1. Enqueue - enqueue(): This is used to add elements at the end of the queue
 2. Dequeue - dequeue(): This is used to remove elements from the front of the queue

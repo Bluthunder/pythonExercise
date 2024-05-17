@@ -13,7 +13,7 @@ Stack has below operations
 """
 
 
-class stack(object):
+class stack:
 
     def __init__(self):
         self.stk = []

@@ -1,7 +1,7 @@
 """
 Date - 14.05.2024
 
-DSA - Double ended Queue
+DSA - Double ended Queue_DS
 
 """
 

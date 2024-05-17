@@ -74,6 +74,7 @@ class Q:
         self.linkedlist.tail = None
 
 
+
 if __name__ == '__main__':
     qll = Q()
 

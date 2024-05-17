@@ -1,11 +1,11 @@
 from multiprocessing import Queue
-import queue
+import Q
 
 # class MP_Q:
-#     q = Queue(maxsize=6)
+#     q = Queue_DS(maxsize=6)
 #     print(q)
 
 
 # class Q:
-#     qq = queue.Queue()
+#     qq = queue.Queue_DS()
 #     qq.put(2)
