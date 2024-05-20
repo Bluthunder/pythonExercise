@@ -1,11 +1,9 @@
 """
 Date - 16.05.2024
-
 DSA - QUEUE
 
 Given a queue of integer rearrange the elements by interleaving the first half of list
 with second half of the list
-
 
 1.Push the first half elements of the queue to stack.
 2.Enqueue back the stack elements.
@@ -19,26 +17,21 @@ from Q import Que as kyu
 
 def interleaveQ(q):
     mid = q.size() // 2
-
     Stk = stack()
 
     # Insert 1st half in stack
-
     for i in range(mid):
         Stk.push(q.dequeue())
 
     # Enqueue to Queue_DS from stack
-
     while not Stk.is_empty():
         q.enqueue(Stk.pop())
 
     # 1st Half dequeue and enqueue
-
     for _ in range(0, mid):
         q.enqueue(q.dequeue())
 
     # push 1st half to stack again
-
     for _ in range(0, mid):
         Stk.push(q.dequeue())
 
