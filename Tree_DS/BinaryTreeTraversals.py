@@ -9,6 +9,8 @@ All the traversals (Preorder, Inorder, PostOrder) are implemented using recursio
 
 """
 
+from Queue_DS.Q import Que as Q
+
 
 class BinaryTreeNode:
 
@@ -77,6 +79,25 @@ class BinaryTreeNode:
         result.append(root.data)
         print(root.data)
 
+    def levelOrderTraversal(self, root, result):
+        if not root:
+            return
+
+        q = Q()
+        q.enqueue(root)
+        node = None
+
+        while not q.is_empty():
+            node = q.dequeue()
+            result.append(node.data)
+            print(node.data)
+
+            if node.left is not None:
+                q.enqueue(node.left)
+
+            if node.right is not None:
+                q.enqueue(node.right)
+
 
 if __name__ == '__main__':
     r_node = BinaryTreeNode(1)
@@ -98,6 +119,6 @@ if __name__ == '__main__':
 
     # r_node.preOrderTraversal(r_node, result=[])
     # r_node.inOrderTraversal(r_node, result=[])
-    r_node.postOrderTraversal(r_node, result=[])
+    # r_node.postOrderTraversal(r_node, result=[])
 
-
+    r_node.levelOrderTraversal(r_node, result=[])
