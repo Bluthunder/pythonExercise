@@ -360,8 +360,6 @@ class BinaryTreeNode:
         return count
 
 
-
-
 if __name__ == '__main__':
     r_node = BinaryTreeNode(1)
     ch1_node = BinaryTreeNode(2)
