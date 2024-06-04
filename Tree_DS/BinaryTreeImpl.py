@@ -222,8 +222,6 @@ class BinaryTreeNode:
         root.right = None
         return "BT deleted"
 
-
-
     def deepest_node(self, root):
         if not root:
             return
@@ -286,7 +284,6 @@ class BinaryTreeNode:
 
                     return "The Node is deleted Successfully"
 
-
                 if temp_ptr.left is not None:
                     customQ.enqueue(temp_ptr.left)
 
@@ -294,6 +291,75 @@ class BinaryTreeNode:
                     customQ.enqueue(temp_ptr.right)
 
             return "Failed to delete"
+
+    def count_leaves(self, root):
+        if not root:
+            return
+
+        q = Q()
+        q.enqueue(root)
+        count = 0
+
+        while not q.is_empty():
+            node_ptr = q.dequeue()
+            if node_ptr.left is None and node_ptr.right is None:
+                count += 1
+
+            else:
+                if node_ptr.left is not None:
+                    q.enqueue(node_ptr.left)
+
+                if node_ptr.right is not None:
+                    q.enqueue(node_ptr.right)
+
+        return count
+
+    def count_fullNode(self, root):
+        if not root:
+            return
+
+        q = Q()
+        q.enqueue(root)
+        count = 0
+
+        while not q.is_empty():
+            node_ptr = q.dequeue()
+
+            if node_ptr.left is not None and node_ptr.right is not None:
+                count += 1
+
+            if node_ptr.left is not None:
+                q.enqueue(node_ptr.left)
+
+            if node_ptr.right is not None:
+                q.enqueue(node_ptr.right)
+
+        return count
+
+    def count_halfNode(self, root):
+        if not root:
+            return
+
+        q = Q()
+        q.enqueue(root)
+        count = 0
+
+        while not q.is_empty():
+            node_ptr = q.dequeue()
+
+            if (node_ptr.left is None and node_ptr.right is not None) or (
+                    node_ptr.left is not None and node_ptr.right is None):
+                count += 1
+
+            if node_ptr.left is not None:
+                q.enqueue(node_ptr.left)
+
+            if node_ptr.right is not None:
+                q.enqueue(node_ptr.right)
+
+        return count
+
+
 
 
 if __name__ == '__main__':
@@ -333,7 +399,9 @@ if __name__ == '__main__':
     # r_node.delete_node(root=r_node, node=4)
     #
 
-    r_node.delete_tree(r_node)
+    # r_node.delete_tree(r_node)
     # r_node = None
 
-    r_node.levelOrderTraversal(r_node, result=[])
+    # r_node.levelOrderTraversal(r_node, result=[])
+
+    # print(r_node.count_leaves(r_node))
