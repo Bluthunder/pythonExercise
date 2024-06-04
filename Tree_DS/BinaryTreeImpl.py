@@ -83,15 +83,15 @@ class BinaryTreeNode:
     def levelOrderTraversal(self, root, result):
         if not root:
             return
-
         q = Q()
         q.enqueue(root)
         node = None
 
         while not q.is_empty():
             node = q.dequeue()
-            result.append(node.data)
-            print(node.data)
+            if node.data is not None:
+                result.append(node.data)
+                print(node.data)
 
             if node.left is not None:
                 q.enqueue(node.left)
@@ -212,7 +212,6 @@ class BinaryTreeNode:
     def delete_tree(self, root):
         if root is None:
             return
-
         self.delete_tree(root.left)
         self.delete_tree(root.right)
         print(f'Deleting Node: {root.data}')
@@ -233,9 +232,8 @@ class BinaryTreeNode:
             if temp_ptr.right is not None:
                 que.enqueue(temp_ptr.right)
 
-        deepest_node = temp_ptr.data
-        return deepest_node
-
+        deepest_node = temp_ptr
+        return deepest_node.data
 
     def delete_deepest_node(self, root, d_node):
         if not root:
@@ -245,12 +243,14 @@ class BinaryTreeNode:
             q.enqueue(root)
             while not q.is_empty():
                 temp_ptr = q.dequeue()
-                if temp_ptr is d_node:
+                if temp_ptr.data is d_node:
                     temp_ptr.data = None
+                    # del temp_ptr.data
                     return
                 if temp_ptr.right:
                     if temp_ptr.right.data is d_node:
                         temp_ptr.right.data = None
+                        # del temp_ptr.right.data
                         return
                     else:
                         q.enqueue(temp_ptr.right)
@@ -258,6 +258,7 @@ class BinaryTreeNode:
                 if temp_ptr.left:
                     if temp_ptr.left.data is d_node:
                         temp_ptr.left.data = None
+                        # del temp_ptr.left.data
                         return
                     else:
                         q.enqueue(temp_ptr.left)
@@ -274,8 +275,10 @@ class BinaryTreeNode:
                     dNode = self.deepest_node(root)
                     self.delete_deepest_node(root, dNode)
                     temp_ptr.data = dNode
-                    print("The Node is deleted Successfully")
-                    return root
+                    # self.delete_deepest_node(root, dNode)
+
+                    return "The Node is deleted Successfully"
+
 
                 if temp_ptr.left is not None:
                     customQ.enqueue(temp_ptr.left)
@@ -317,12 +320,13 @@ if __name__ == '__main__':
     # r_node.reverse_levelOrderTraversal(r_node)
 
     # dNode = r_node.deepest_node(r_node)
-    # print(dNode)
-    # print(r_node.delete_deepest_node(r_node, dNode))
+    # print(dNode.data)
+    # r_node.delete_deepest_node(r_node, dNode)
 
-    # r_node.delete_node(root=r_node, node=3)
+    r_node.delete_node(root=r_node, node=4)
     #
 
-    r_node.delete_tree(r_node)
+    # r_node.delete_tree(r_node)
+    # r_node = None
 
     r_node.levelOrderTraversal(r_node, result=[])
