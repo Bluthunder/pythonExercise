@@ -210,12 +210,19 @@ class BinaryTreeNode:
             print(stk.pop().data)
 
     def delete_tree(self, root):
-        if root is None:
-            return
-        self.delete_tree(root.left)
-        self.delete_tree(root.right)
-        print(f'Deleting Node: {root.data}')
-        del root
+        # if root is None:
+        #     return
+        # self.delete_tree(root.left)
+        # self.delete_tree(root.right)
+        # print(f'Deleting Node: {root.data}')
+        # del root
+
+        root.data = None
+        root.left = None
+        root.right = None
+        return "BT deleted"
+
+
 
     def deepest_node(self, root):
         if not root:
@@ -323,10 +330,10 @@ if __name__ == '__main__':
     # print(dNode.data)
     # r_node.delete_deepest_node(r_node, dNode)
 
-    r_node.delete_node(root=r_node, node=4)
+    # r_node.delete_node(root=r_node, node=4)
     #
 
-    # r_node.delete_tree(r_node)
+    r_node.delete_tree(r_node)
     # r_node = None
 
     r_node.levelOrderTraversal(r_node, result=[])
