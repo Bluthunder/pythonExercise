@@ -127,5 +127,5 @@ if __name__ == '__main__':
 
     # print(merge_two_list(linked_list1, linked_list2))
 
-    print(linked_list1.middle_node())
-    print(linked_list2.middle_node())
+    # print(linked_list1.middle_node())
+    # print(linked_list2.middle_node())

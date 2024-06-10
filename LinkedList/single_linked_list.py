@@ -191,7 +191,7 @@ if __name__ == '__main__':
 
     linkedlist.pop()
     linkedlist.pop_first()
-    linkedlist.remove(3)
+    print(f'Removal - {linkedlist.remove(3)}')
 
     print(f'Linked List After : {linkedlist}')
 
