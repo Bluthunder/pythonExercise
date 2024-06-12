@@ -1,4 +1,4 @@
-def merge_two_list(self, l1, l2):
+def merge_two_list(l1, l2):
     dummy = Node(-1)
     prev = dummy
 
@@ -8,7 +8,7 @@ def merge_two_list(self, l1, l2):
             l1 = l1.next
         else:
             prev.value = l2
-            l2 = l2.nex
+            l2 = l2.next
 
         prev = prev.next
 
@@ -125,7 +125,7 @@ if __name__ == '__main__':
     # print(linked_list.get_node_from_end_efficient(2))
     # print(linked_list.get_node_from_end(2))
 
-    # print(merge_two_list(linked_list1, linked_list2))
+    print(merge_two_list(linked_list1, linked_list2))
 
     # print(linked_list1.middle_node())
     # print(linked_list2.middle_node())
