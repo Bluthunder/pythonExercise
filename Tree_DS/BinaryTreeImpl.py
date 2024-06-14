@@ -382,7 +382,7 @@ if __name__ == '__main__':
     # r_node.inOrderTraversal(r_node, result=[])
     # r_node.postOrderTraversal(r_node, result=[])
 
-    # r_node.levelOrderTraversal(r_node, result=[])
+    r_node.levelOrderTraversal(r_node, result=[])
     #
     # r_node.insert_into_bt(r_node, 11)
     # r_node.levelOrderTraversal(r_node,result=[])
