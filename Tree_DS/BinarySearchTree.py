@@ -132,7 +132,7 @@ class BSTNode:
                 successor_node = root.data
                 root = root.left
         return successor_node
-    
+
     def predecessorBST(self, root, node):
         predecessor_node = None
         while root is not None:
@@ -143,9 +143,32 @@ class BSTNode:
                 root = root.right
         return predecessor_node
 
+    def delete_element(self, root, key):
+        if not root:
+            return root
 
-    def delete_element(self):
-        pass
+        if key > root.data:
+            root.right = self.delete_element(root.right, key)
+        elif key < root.data:
+            root.left = self.delete_element(root.left, key)
+
+        else:
+            if not root.left:
+                return root.right
+            elif not root.right:
+                return root.left
+
+            # Find minimum from right subtree
+            curr_node = root.right
+            while curr_node.left:
+                curr_node = curr_node.left
+            root.data = curr_node.data
+            root.right = self.delete_element(root.right, root.data)
+
+        return root
+
+
+
 
 
 if __name__ == '__main__':
@@ -172,3 +195,7 @@ if __name__ == '__main__':
 
     print(f'Successor -- >  {newBST.successorBST(newBST, BSTNode(50))}')
     print(f'Predecessor --> {newBST.predecessorBST(newBST, BSTNode(50))}')
+
+    print(f'Node delete from BST -- > {newBST.delete_element(newBST, 50)}')
+
+    print(newBST.preorderTraversal(newBST, result=[]))
