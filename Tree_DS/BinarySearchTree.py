@@ -167,8 +167,20 @@ class BSTNode:
 
         return root
 
+    def lca(self, root, node1, node2):
+        curr_node = root
 
+        if not root:
+            return root
+        while curr_node:
+            if node1.data > root.data and node2.data > root.data:
+                curr_node = curr_node.right
 
+            elif node1.data < root.data and node2.data < root.data:
+                curr_node = curr_node.left
+
+            else:
+                return curr_node.data
 
 
 if __name__ == '__main__':
@@ -182,9 +194,9 @@ if __name__ == '__main__':
     newBST.insert_node(newBST, 50)
     newBST.insert_node(newBST, 40)
 
-    # newBST.preorderTraversal(newBST, result=[])
+    newBST.preorderTraversal(newBST, result=[])
     # print('******************************************')
-    newBST.inorderTraversal(newBST, result=[])
+    # newBST.inorderTraversal(newBST, result=[])
     # print("******************************************")
     # newBST.postorderTraversal(newBST, result=[])
 
@@ -193,9 +205,11 @@ if __name__ == '__main__':
     # print(f'Minimum Value is -- >> {newBST.find_minimum(newBST)}')
     # print(f'Maximum Value is -- >> {newBST.find_maximum(newBST)}')
 
-    print(f'Successor -- >  {newBST.successorBST(newBST, BSTNode(50))}')
-    print(f'Predecessor --> {newBST.predecessorBST(newBST, BSTNode(50))}')
+    # print(f'Successor -- >  {newBST.successorBST(newBST, BSTNode(50))}')
+    # print(f'Predecessor --> {newBST.predecessorBST(newBST, BSTNode(50))}')
 
-    print(f'Node delete from BST -- > {newBST.delete_element(newBST, 50)}')
+    # print(f'Node delete from BST -- > {newBST.delete_element(newBST, 50)}')
 
-    print(newBST.preorderTraversal(newBST, result=[]))
+    # print(newBST.preorderTraversal(newBST, result=[]))
+
+    # print(newBST.lca(newBST, BSTNode(50), BSTNode(80)))
