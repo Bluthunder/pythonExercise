@@ -29,9 +29,7 @@ def RabinKarp(text: str, pattern: str):
 
     return -1
 
-
 class Hash:
-
     def __init__(self, text: str, size: int):
         self.str = text
         self.hash = 0
