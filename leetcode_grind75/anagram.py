@@ -35,7 +35,6 @@ def anagram(s: str, t: str) -> bool:
     # for i in range(len(s)):
     #     count_s[s[i]] = 1 + count_s.get(s[i], 0)
     #     countT[t[i]] = 1 + countT.get(t[i], 0)
-
     for c in s:
         if c not in countS:
             countS[c] = 1
@@ -49,7 +48,6 @@ def anagram(s: str, t: str) -> bool:
             countT[b] += 1
 
     # print(f' count of s {count_s}, t {countT}')
-
     for ch in countS:
         if countS[ch] != countT.get(ch, 0):
             return False

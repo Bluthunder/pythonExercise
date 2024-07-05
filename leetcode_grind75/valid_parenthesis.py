@@ -4,8 +4,6 @@ Leetcode Grind 75 Question: 2
 DSA Topic: Stack
 
 """
-
-
 def valid_parenthesis(s: str) -> bool:
 
     # Empty stack to hold opening parenthesis

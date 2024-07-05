@@ -55,9 +55,7 @@ def is_palindrome_inbuilt(string: str) -> bool:
 
 if __name__ == '__main__':
     input_string = "A man, a plan, a canal: Panama"
-
     invalid_string = ".,"
-
     print(f'This function uses implementations from scratch to check palindrome, {isPalindrome(input_string)}')
 
     # print(f'This function uses in built python methods, {is_palindrome_inbuilt(invalid_string)}')
