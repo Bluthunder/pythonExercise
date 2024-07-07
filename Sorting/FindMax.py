@@ -40,8 +40,7 @@ def checkMax(arr):
     print(f'candidate {max_candidate} appeared {max_counter} times')
 
 
-
-
 if __name__ == '__main__':
     arr = [3, 2, 1, 2, 2, 4]
     findMax(arr)
+
