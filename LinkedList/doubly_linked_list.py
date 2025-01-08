@@ -22,8 +22,6 @@ In a linked list implementation below following method has been implemented
 11. Search Linked List: search - Search for target value in linked list and return true
 
 """
-
-
 class Node:
     def __init__(self, value):
         self.value = value
